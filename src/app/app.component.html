@@ -1,0 +1,51 @@
+<div [ngClass]="{ 'dark-theme': isDarkTheme }">
+  <nav class="nav-bar">
+    <div class="mat-app-background">
+      <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <ng-container *ngFor="let item of navItems" [ngSwitch]="item?.key">
+            <a *ngSwitchCase="'Homepage'" (click)="onHomepageClick()">
+              {{ item.key }}
+            </a>
+
+            <div class="dropdown" *ngSwitchDefault>
+              <span>{{ item.key }}</span>
+              <div class="dropdown-content">
+                <p
+                  class="dropdown-item"
+                  *ngFor="let dropdownItem of item?.value"
+                  (click)="onSelect(dropdownItem)"
+                >
+                  {{ dropdownItem.key }}
+                </p>
+              </div>
+            </div>
+          </ng-container>
+          <mat-slide-toggle
+            [checked]="isDarkTheme"
+            (change)="toggleDarkTheme($event.checked)"
+          >
+            {{ isDarkTheme ? "Dark theme" : "Light theme" }}
+          </mat-slide-toggle>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </div>
+  </nav>
+
+  <div class="content">
+    <div class="tile">
+      <h1>The best movies</h1>
+      <div [ngClass]="getClasses()">
+        <mat-card *ngFor="let film of films">
+          <mat-card-title>{{ film?.title }}</mat-card-title>
+          <img mat-card-image [src]="film?.poster" />
+          <mat-card-content>
+            <p>Year: {{ film?.year }}</p>
+            <p>Box office: {{ film?.amount | roundMoney }}</p>
+            <p class="description" *ngIf="!isTile">{{ film?.description }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
