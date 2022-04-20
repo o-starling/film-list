@@ -3,8 +3,11 @@
     <div class="mat-app-background">
       <mat-toolbar color="primary">
         <mat-toolbar-row>
-          <ng-container *ngFor="let item of navItems" [ngSwitch]="item?.key">
-            <a *ngSwitchCase="'Homepage'" (click)="onHomepageClick()">
+          <ng-container *ngFor="let item of navItems" [ngSwitch]="item?.value">
+            <a *ngSwitchCase="'home'" (click)="onHomepageClick()">
+              {{ item.key }}
+            </a>
+            <a *ngSwitchCase="'add'" (click)="openDialog(myTemplate)">
               {{ item.key }}
             </a>
 
@@ -34,18 +37,111 @@
 
   <div class="content">
     <div class="tile">
+      <input
+        type="text"
+        placeholder="Search"
+        #search
+        (keyup)="onSearch(search.value)"
+      />
       <h1>The best movies</h1>
       <div [ngClass]="getClasses()">
         <mat-card *ngFor="let film of films">
           <mat-card-title>{{ film?.title }}</mat-card-title>
-          <img mat-card-image [src]="film?.poster" />
+          <img mat-card-image [src]="getSantizeUrl(film?.poster)" />
           <mat-card-content>
-            <p>Year: {{ film?.year }}</p>
-            <p>Box office: {{ film?.amount | roundMoney }}</p>
-            <p class="description" *ngIf="!isTile">{{ film?.description }}</p>
+            <div>
+              <p>
+                Year: <span class="normal">{{ film?.year }}</span>
+              </p>
+              <p>
+                Box office:
+                <span class="normal">{{ film?.amount | roundMoney }}</span>
+              </p>
+              <p class="actors" *ngIf="!isTile">
+                Starring: <span class="normal">{{ film?.actors }}</span>
+              </p>
+              <p class="description" *ngIf="!isTile">
+                <span class="normal">{{ film?.description }}</span>
+              </p>
+              <p class="date" *ngIf="!isTile">
+                Added to list:
+                <span class="normal">{{ film?.date | ukDate }}</span>
+              </p>
+            </div>
+            <button type="submit" class="delbutton" (click)="deleteFilm(film)">
+              Delete
+            </button>
           </mat-card-content>
         </mat-card>
       </div>
     </div>
   </div>
 </div>
+
+<ng-template #myTemplate>
+  <h3>Add Your favorite film</h3>
+  <form (ngSubmit)="addFilm()" [formGroup]="filmForm" novalidate class="form">
+    <label>Film title:</label>
+    <input
+      formControlName="title"
+      type="text"
+      class="form-control"
+      placeholder="Enter film title"
+    />
+    <ng-container *ngIf="isSubmitted && filmForm.get('title').invalid">
+      <ng-container *ngTemplateOutlet="required"></ng-container>
+    </ng-container>
+    <label>Release year:</label>
+    <input
+      formControlName="year"
+      type="number"
+      class="form-control"
+      placeholder="Enter year"
+    />
+    <ng-container *ngIf="isSubmitted && filmForm.get('year').invalid">
+      <ng-container *ngTemplateOutlet="required"></ng-container>
+    </ng-container>
+    <label>Box office:</label>
+    <input
+      formControlName="amount"
+      type="number"
+      class="form-control"
+      placeholder="Enter film box office"
+    />
+    <ng-container *ngIf="isSubmitted && filmForm?.get('amount')?.invalid">
+      <ng-container *ngTemplateOutlet="required"></ng-container>
+    </ng-container>
+    <label>Starring:</label>
+    <div formArrayName="actors">
+      <div
+        *ngFor="let actor of actors?.controls; index as i; let first = first"
+      >
+        <input [formControlName]="i" placeholder="Actor" class="form-control" />
+        <ng-container *ngIf="isSubmitted && first && actor?.invalid">
+          <ng-container *ngTemplateOutlet="required"></ng-container>
+        </ng-container>
+      </div>
+    </div>
+    <label>Film's description:</label>
+    <textarea
+      formControlName="description"
+      type="text"
+      class="form-control"
+      rows="4"
+      cols="50"
+    ></textarea>
+    <ng-container *ngIf="isSubmitted && filmForm?.get('description')?.invalid">
+      <ng-container *ngTemplateOutlet="required"></ng-container>
+    </ng-container>
+    <label>Add film's poster:</label>
+    <input formControlName="poster" type="input" class="form-control" />
+    <ng-container *ngIf="isSubmitted && filmForm?.get('poster')?.invalid">
+      <ng-container *ngTemplateOutlet="required"></ng-container>
+    </ng-container>
+    <input class="submit" type="submit" value="Send" />
+  </form>
+</ng-template>
+
+<ng-template #required>
+  <p class="invalid">Please fill this field</p>
+</ng-template>

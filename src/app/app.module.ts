@@ -9,9 +9,12 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { MoneyPipe } from './core/pipes/transform-num.pipe';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UkrDatePipe } from './core/pipes/transform-date.pipe';
 
 @NgModule({
-  declarations: [AppComponent, MoneyPipe],
+  declarations: [AppComponent, MoneyPipe, UkrDatePipe],
   imports: [
     BrowserModule,
     CommonModule,
@@ -20,6 +23,8 @@ import { MoneyPipe } from './core/pipes/transform-num.pipe';
     MatCardModule,
     MatToolbarModule,
     MatSlideToggleModule,
+    MatDialogModule,
+    ReactiveFormsModule,
   ],
   bootstrap: [AppComponent],
 })

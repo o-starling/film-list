@@ -4,62 +4,80 @@
     "poster": "assets/images/bohemian-rhapsody.jpg",
     "year": "2018",
     "amount": 911100000,
-    "description": "The film tells the story of the life of Freddie Mercury, the lead singer of the British rock band Queen, from the formation of the band in 1970 up to their 1985 Live Aid performance at the original Wembley Stadium."
+    "actors": ["Rami Malek", "Lucy Boynton", "Gwilym Lee", "Ben Hardy", "Joe Mazzello", "Aidan Gillen", "Tom Hollander", "Mike Myers"],
+    "description": "The film tells the story of the life of Freddie Mercury, the lead singer of the British rock band Queen, from the formation of the band in 1970 up to their 1985 Live Aid performance at the original Wembley Stadium.",
+    "date": 1649959082000
   },
   {
     "title": "Rocketman",
     "poster": "assets/images/rocketman.jpg",
     "year": "2019",
     "amount": 195300000,
-    "description": "This film is a 2019 biographical musical drama film based on the life and music of British musician Elton John. The film follows John in his early days in England as a prodigy at the Royal Academy of Music through his musical partnership with Taupin."
+    "actors": ["Taron Egerton", "Jamie Bell", "Richard Madden", "Bryce Dallas Howard", "Gemma Jones"],
+    "description": "This film is a 2019 biographical musical drama film based on the life and music of British musician Elton John. The film follows John in his early days in England as a prodigy at the Royal Academy of Music through his musical partnership with Taupin.",
+    "date": 1649959082000
   },
   {
     "title": "Cruella",
     "poster": "assets/images/cruella.jpeg",
     "year": "2021",
     "amount": 233500000,
-    "description": "Cruella is a 2021 American crime comedy film based on the character Cruella de Vil from Dodie Smith's 1956 novel The Hundred and One Dalmatians."
+    "actors": ["Emma Stone", "Emma Thompson", "Joel Fry", "Paul Walter Hauser", "Emily Beecham", "Mark Strong"],
+    "description": "Cruella is a 2021 American crime comedy film based on the character Cruella de Vil from Dodie Smith's 1956 novel The Hundred and One Dalmatians.",
+    "date": 1650045482000
   },
   {
     "title": "Don't Look Up",
     "poster": "assets/images/dont-look-up.jpg",
     "year": "2021",
     "amount": 791863000,
-    "description": "Film tells the story of two astronomers attempting to warn humanity about an approaching comet that will destroy human civilization."
+    "actors": ["Leonardo DiCaprio", "Jennifer Lawrence", "Rob Morgan", "Jonah Hill", "Tyler Perry", "Timothée Chalamet", "Ron Perlman", "Meryl Streep"],
+    "description": "Film tells the story of two astronomers attempting to warn humanity about an approaching comet that will destroy human civilization.",
+    "date": 1650045482000
   },
   {
     "title": "House of Gucci",
     "poster": "assets/images/house-of-gucci.png",
     "year": "2021",
     "amount": 156700000,
-    "description": "The film follows Patrizia Reggiani (Lady Gaga) and Maurizio Gucci (Adam Driver), as their romance transforms into a fight for control of the Italian fashion brand Gucci."
+    "actors": ["Lady Gaga", "Adam Driver", "Jared Leto", "Jeremy Irons", "Salma Hayek", "Al Pacino"],
+    "description": "The film follows Patrizia Reggiani (Lady Gaga) and Maurizio Gucci (Adam Driver), as their romance transforms into a fight for control of the Italian fashion brand Gucci.",
+    "date": 1650045482000
   },
   {
     "title": "Joker",
     "poster": "assets/images/joker.jpg",
     "year": "2019",
     "amount": 1074000000,
-    "description": "The film, based on DC Comics characters, stars Joaquin Phoenix as the Joker and provides a possible origin story for the character."
+    "actors": ["Joaquin Phoenix", "Robert De Niro", "Zazie Beetz", "Frances Conroy"],
+    "description": "The film, based on DC Comics characters, stars Joaquin Phoenix as the Joker and provides a possible origin story for the character.",
+    "date": 1650131882000
   },
   {
     "title": "Begin Again",
     "poster": "assets/images/begin-again.jpg",
     "year": "2013",
     "amount": 65700000,
-    "description": "This story is about a singer-songwriter who is discovered by a struggling record label executive (Ruffalo) and collaborates with him to produce an album recorded in public locations all over New York City."
+    "actors": ["Keira Knightley", "Mark Ruffalo", "Hailee Steinfeld", "Adam Levine", "James Corden", "Yasiin Bey", "CeeLo Green", "Catherine Keener"],
+    "description": "This story is about a singer-songwriter who is discovered by a struggling record label executive (Ruffalo) and collaborates with him to produce an album recorded in public locations all over New York City.",
+    "date": 1650045482000
   },
   {
     "title": "King Richard",
     "poster": "assets/images/king-richard.jpg",
     "year": "2021",
     "amount": 38100000,
-    "description": "American biographical sports drama film, which follows the life of Richard Williams, the father and coach of famed tennis players Venus and Serena Williams"
+    "actors": ["Will Smith", "Aunjanue Ellis", "Saniyya Sidney", "Demi Singleton", "Tony Goldwyn", "Jon Bernthal"],
+    "description": "American biographical sports drama film, which follows the life of Richard Williams, the father and coach of famed tennis players Venus and Serena Williams",
+    "date": 1650131882000
   },
   {
     "title": "Red Notice",
     "poster": "assets/images/red-notice.jpg",
     "year": "2021",
     "amount": 2000000,
-    "description": " American action comedy film. Dwayne Johnson, stars as an FBI agent who reluctantly teams up with a renowned art thief (Ryan Reynolds) in order to catch an even more notorious criminal (Gal Gadot)"
+    "actors": ["Dwayne Johnson", "Ryan Reynolds", "Gal Gadot", "Ritu Arya", "Chris Diamantopoulos"],
+    "description": " American action comedy film. Dwayne Johnson, stars as an FBI agent who reluctantly teams up with a renowned art thief (Ryan Reynolds) in order to catch an even more notorious criminal (Gal Gadot)",
+    "date": 1650218282000
   }
 ]
